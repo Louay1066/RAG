@@ -19,8 +19,8 @@ from rag import (
 load_dotenv()
 
 BASE_DIR = Path(__file__).parent
-CHROMA_DIR = str(BASE_DIR / "chroma_db")
-DOCS_DIR = str(BASE_DIR / "docs")
+CHROMA_DIR = str(Path("/tmp") / "chroma_db")
+DOCS_DIR = str(Path("/tmp") / "docs")
 
 FILE_ICONS = {".pdf": "PDF", ".txt": "TXT", ".md": "MD"}
 
