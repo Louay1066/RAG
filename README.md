@@ -29,32 +29,7 @@ A complete Retrieval-Augmented Generation pipeline with a clean web interface �
 
 ## Architecture
 
-```
-                  ┌──────────────┐
-                  │   Streamlit  │
-                  │   Web  UI    │
-                  └──────┬───────┘
-                         │
-          ┌──────────────┼──────────────┐
-          │              │              │
-          ▼              ▼              ▼
-    ┌──────────┐  ┌──────────┐  ┌──────────────┐
-    │  Ingest  │  │  Query   │  │  Evaluate    │
-    │          │  │          │  │              │
-    │ Load     │  │ Retrieve │  │ Faithfulness │
-    │ Chunk    │  │ Generate │  │ Relevancy    │
-    │ Embed    │  │ Answer   │  │ Context      │
-    │ Store    │  │          │  │ Correctness  │
-    └────┬─────┘  └────┬─────┘  └──────┬───────┘
-         │             │               │
-         ▼             ▼               ▼
-    ┌─────────┐  ┌──────────┐   ┌──────────┐
-    │ChromaDB │  │ OpenAI   │   │ OpenAI   │
-    │         │◄─┤Embeddings│   │ LLM      │
-    │ Vectors │  │ + LLM    │   │ (Judge)  │
-    └─────────┘  └──────────┘   └──────────┘
-```
-
+![RAG Architecture](RAG%20Architecture.png)
 ---
 
 ## Quick Start
@@ -62,7 +37,7 @@ A complete Retrieval-Augmented Generation pipeline with a clean web interface �
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/RAG.git
+git clone https://github.com/Louay1066/RAG.git
 cd RAG
 ```
 
