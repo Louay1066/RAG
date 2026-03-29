@@ -22,7 +22,8 @@ A complete Retrieval-Augmented Generation pipeline with a clean web interface �
 | **Document Ingestion** | Upload PDF, TXT, and Markdown files — automatically chunked, embedded, and stored |
 | **Semantic Search & QA** | Ask questions in plain English and get grounded answers with source citations |
 | **Pipeline Evaluation** | Score your pipeline on faithfulness, relevancy, context quality, and correctness |
-| **Configurable** | Tune chunk size, overlap, top-K, embedding model, and LLM from the sidebar |
+| **Cross-Encoder Reranking** | Re-ranks bi-encoder results with a cross-encoder (`ms-marco-MiniLM-L-6-v2`) for higher relevance |
+| **Configurable** | Tune chunk size, overlap, top-K, embedding model, LLM, and reranking from the sidebar |
 | **Persistent Store** | ChromaDB vector store persists across sessions |
 
 ---
@@ -129,6 +130,7 @@ All settings are available in the sidebar:
 | Chunk size | 1000 | Characters per chunk |
 | Chunk overlap | 200 | Overlap between consecutive chunks |
 | Top K | 4 | Number of chunks retrieved per query |
+| Cross-encoder reranking | On | Re-rank bi-encoder results with a cross-encoder for better precision |
 
 ---
 
@@ -155,6 +157,7 @@ RAG/
 - **[ChromaDB](https://www.trychroma.com)** — Local vector storage
 - **[OpenAI](https://openai.com)** — Embeddings (`text-embedding-3-small`) and LLM (`gpt-4o-mini`)
 - **[Streamlit](https://streamlit.io)** — Web interface
+- **[Sentence Transformers](https://www.sbert.net)** — Cross-encoder reranking (`ms-marco-MiniLM-L-6-v2`)
 - **[Pandas](https://pandas.pydata.org)** — Evaluation results display
 
 ---

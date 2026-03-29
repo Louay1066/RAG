@@ -8,3 +8,4 @@ streamlit>=1.38
 pypdf>=4.0
 python-dotenv>=1.0
 pandas>=2.0
+sentence-transformers>=3.0

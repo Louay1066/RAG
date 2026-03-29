@@ -1,6 +1,7 @@
 import html
 import json
 import os
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 from pathlib import Path
 
 import pandas as pd
@@ -113,6 +114,8 @@ with st.sidebar:
         )
         llm_model = st.selectbox("LLM model", ["gpt-4o-mini", "gpt-4o"])
         top_k = st.slider("Top K chunks", 1, 10, 4)
+        rerank = st.toggle("Cross-encoder reranking", value=True,
+                           help="Re-rank bi-encoder results with a cross-encoder for higher relevance.")
 
     with st.expander("Chunking", expanded=False):
         chunk_size = st.slider("Chunk size (chars)", 200, 2000, 1000, step=100)
@@ -269,6 +272,7 @@ with tab_query:
                         embedding_model=embedding_model,
                         llm_model=llm_model,
                         top_k=top_k,
+                        rerank=rerank,
                     )
 
                     # ── Answer ──────────────────────────────────────────
@@ -378,6 +382,7 @@ with tab_eval:
                         embedding_model=embedding_model,
                         llm_model=llm_model,
                         top_k=top_k,
+                        rerank=rerank,
                     )
                     rag_results.append(rag_r)
 
