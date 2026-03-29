@@ -26,7 +26,7 @@ FILE_ICONS = {".pdf": "PDF", ".txt": "TXT", ".md": "MD"}
 
 # ── Page config & CSS ───────────────────────────────────────────────────────
 
-st.set_page_config(page_title="RAG Pipeline", layout="wide")
+st.set_page_config(page_title="RAG Pipeline", layout="wide", initial_sidebar_state="expanded")
 
 st.markdown(
     """
@@ -81,7 +81,7 @@ st.markdown(
     .section-gap { margin-top: 1.5rem; }
 
     /* hide streamlit chrome */
-    #MainMenu, footer, header { visibility: hidden; }
+    #MainMenu, footer { visibility: hidden; }
 </style>
 """,
     unsafe_allow_html=True,
