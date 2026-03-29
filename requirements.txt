@@ -1,0 +1,10 @@
+langchain>=0.3
+langchain-openai>=0.2
+langchain-chroma>=0.2
+langchain-community>=0.3
+langchain-text-splitters>=0.3
+chromadb>=0.5
+streamlit>=1.38
+pypdf>=4.0
+python-dotenv>=1.0
+pandas>=2.0
